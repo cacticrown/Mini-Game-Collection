@@ -6,6 +6,7 @@ public class QuizShow : IMiniGame
 
     public string Description => "Can you answer all the questions correctly?";
 
+    #region questions
     private readonly List<Question> questions = new()
     {
         new Question("What is the capital of France?", ["Berlin", "Madrid", "Paris", "Rome"], 2),
@@ -109,6 +110,7 @@ public class QuizShow : IMiniGame
         new Question("Who was the second President of the United States?", ["Thomas Jefferson", "John Adams", "James Madison", "Benjamin Franklin"], 1),
         new Question("What is the largest planet in our solar system?", ["Saturn", "Jupiter", "Neptune", "Uranus"], 1)
     };
+    #endregion
 
     private record Question(string Text, string[] Options, int CorrectIndex);
 
