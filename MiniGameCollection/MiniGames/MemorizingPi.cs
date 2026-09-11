@@ -21,13 +21,18 @@ public class MemorizingPi : IMiniGame
         int score = 0;
         int check = Math.Min(input.Length, PiDigits.Length);
 
-        // start at 2 so skip "3."
-        for (int i = 2; i < check; i++)
+        for (int i = 0; i < check; i++)
         {
             if (input[i] != PiDigits[i])
             {
                 Console.WriteLine($"\nMistake at position {i + 1}: expected '{PiDigits[i]}', but got '{input[i]}'.");
                 break;
+            }
+
+            // skip "3."
+            if (i >= 2)
+            {
+                score++;
             }
         }
 
