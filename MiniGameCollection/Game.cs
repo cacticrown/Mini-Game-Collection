@@ -1,9 +1,11 @@
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace MiniGameCollection;
 
 public class Game
 {
+    const string Title = "░█▄█░▀█▀░█▀█░▀█▀░░░█▀▀░█▀█░█▄█░█▀▀░░░█▀▀░█▀█░█░░░█░░░█▀▀░█▀▀░▀█▀░▀█▀░█▀█░█▀█\r\n░█░█░░█░░█░█░░█░░░░█░█░█▀█░█░█░█▀▀░░░█░░░█░█░█░░░█░░░█▀▀░█░░░░█░░░█░░█░█░█░█\r\n░▀░▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░▀░▀░▀░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀\n";
+
     private readonly List<IMiniGame> miniGames;
     private string filter = string.Empty;
 
@@ -63,8 +65,8 @@ public class Game
 
     private void DrawMenu(List<IMiniGame> games)
     {
-        Console.WriteLine("Terminal Mini Game Collection - Do not play in class!\n");
-        
+        Console.WriteLine(Title);
+
         if (!string.IsNullOrEmpty(filter))
         {
             Console.WriteLine($"[Filter: \"{filter}\"]\n");
